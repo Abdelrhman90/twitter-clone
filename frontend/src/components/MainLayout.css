@@ -1,0 +1,206 @@
+:root {
+  --blue: #1fa2f1;
+  --blueLight: #9bd1f9;
+  --blueBackground: rgba(212, 237, 255, 0.6);
+  --buttonHoverBg: #d4edff;
+  --lightGrey: rgb(230, 236, 240);
+  --spacing: 15px;
+  --greyText: rgb(101, 119, 134);
+  --greyButtonText: rgba(0, 0, 0, 0.34);
+  --red: rgb(226, 34, 94);
+  --redBackground: rgba(226, 34, 94, 0.1);
+  --green: rgb(23, 191, 99);
+  --greenBackground: rgba(23, 191, 99, 0.1);
+}
+
+* {
+  outline: none !important;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  color: var(--greyButtonText);
+}
+
+.mainSectionContainer {
+  padding: 0;
+  border-right: 1px solid var(--lightGrey);
+  border-left: 1px solid var(--lightGrey);
+  display: flex;
+  flex-direction: column;
+}
+
+.titleContainer {
+  padding: 0 var(--spacing);
+  height: 53px;
+  border-bottom: 1px solid var(--lightGrey);
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.titleContainer h1 {
+  flex: 1;
+  font-size: 19px;
+  font-weight: 800;
+  margin: 0;
+}
+
+.postFormContainer {
+  display: flex;
+  padding: var(--spacing);
+  border-bottom: 5px solid rgb(230, 236, 240);
+  flex-shrink: 0;
+}
+
+.modal-body .postFormContainer {
+  border-bottom: none;
+  padding: 0;
+  padding-top: var(--spacing);
+}
+
+.userImageContainer {
+  width: 50px;
+  height: 50px;
+}
+
+.userImageContainer img {
+  width: 100%;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.textareaContainer {
+  flex: 1;
+  padding-left: var(--spacing);
+}
+
+.textareaContainer textarea {
+  width: 100%;
+  border: none;
+  resize: none;
+  font-size: 19px;
+}
+
+.submitButton {
+  background-color: var(--blue);
+  color: white;
+  border: none;
+  border-radius: 40px;
+  padding: 7px 15px;
+}
+
+.submitButton:disabled {
+  background-color: var(--blueLight);
+}
+
+.post {
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing);
+  border-bottom: 1px solid var(--lightGrey);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.mainPostContainer {
+  flex: 1;
+  display: flex;
+}
+.postContentContainer {
+  padding-left: var(--spacing);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.username,
+.date {
+  color: var(--greyText);
+}
+
+.displayname {
+  font-weight: bold;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+}
+
+.footer .postButtonContainer {
+  display: flex;
+  flex: 1;
+}
+.postButtonContainer button {
+  padding: 2px 5px;
+}
+
+.header a:hover {
+  text-decoration: underline;
+}
+
+.header a,
+.header span {
+  padding-right: 5px;
+}
+
+.postButtonContainer button:hover {
+  background-color: #d4edff;
+  color: var(--blue);
+  border-radius: 50%;
+}
+
+.red {
+  color: var(--red);
+}
+
+.green {
+  color: var(--green);
+}
+
+.postActionContainer {
+  padding-left: 35px;
+  font-size: 13px;
+  color: var(--greyText);
+  margin-bottom: 5px;
+}
+
+.postButtonContainer button.red:hover {
+  color: var(--red);
+  background-color: var(--redBackground);
+}
+.postButtonContainer button.green:hover {
+  color: var(--green);
+  background-color: var(--greenBackground);
+}
+
+.big {
+  font-size: 25px;
+}
+
+.postContentContainer .header {
+  display: flex;
+}
+
+.postContentContainer .header .date {
+  flex: 1;
+}
+
+.postContentContainer .header svg {
+  color: var(--greyText);
+  font-size: 14px;
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  padding: var(--spacing);
+}

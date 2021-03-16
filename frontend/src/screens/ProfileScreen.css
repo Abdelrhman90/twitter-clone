@@ -1,0 +1,467 @@
+:root {
+  --blue: #1fa2f1;
+  --blueLight: #9bd1f9;
+  --blueBackground: rgba(212, 237, 255, 0.6);
+  --buttonHoverBg: #d4edff;
+  --lightGrey: rgb(230, 236, 240);
+  --spacing: 15px;
+  --greyText: rgb(101, 119, 134);
+  --greyButtonText: rgba(0, 0, 0, 0.34);
+  --red: rgb(226, 34, 94);
+  --redBackground: rgba(226, 34, 94, 0.1);
+  --green: rgb(23, 191, 99);
+  --greenBackground: rgba(23, 191, 99, 0.1);
+}
+
+html,
+body {
+  height: 100%;
+  min-height: 100%;
+  background-color: white;
+  font-weight: 300;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.wrapper > .row {
+  margin: 0;
+  height: 100%;
+}
+
+.coverPhotoSection {
+  height: 180px;
+  background-color: var(--blue);
+  position: relative;
+}
+
+.profileHeaderContainer .profileImageContainer {
+  width: 132px;
+  height: 132px;
+  margin-left: var(--spacing);
+  position: absolute;
+  bottom: -66px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profileHeaderContainer .profileImageContainer img {
+  border: 4px solid #fff;
+  width: 100%;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.profileHeaderContainer .profileButtonsContainer {
+  padding: var(--spacing);
+  text-align: right;
+  min-height: 66px;
+}
+
+.profileButton,
+.followButton {
+  border: 1px solid var(--blue);
+  color: var(--blue);
+  font-weight: bold;
+  padding: 5px 15px;
+  border-radius: 60px;
+  display: inline-block;
+  margin-left: var(--spacing);
+}
+
+.followButton:hover,
+.profileButton:hover {
+  background-color: var(--blueBackground);
+}
+.followButton.following {
+  background-color: var(--blue);
+  color: white;
+}
+
+.profileHeaderContainer .userDetailsContainer {
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing);
+}
+
+.followersContainer .value {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.followersContainer a {
+  margin-right: 15px;
+}
+.followersContainer span:not(.value) {
+  color: var(--greyText);
+}
+
+.tabsContainer {
+  display: flex;
+  flex-shrink: 0;
+  border-bottom: 1px solid var(--lightGrey);
+}
+
+.tab {
+  flex: 1;
+  height: 52px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--greyText);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.tab.active {
+  color: var(--blue);
+  border-bottom: 1px solid var(--blue);
+}
+
+.tab:hover {
+  color: var(--blue);
+  background-color: var(--blueBackground);
+}
+
+.profilePictureButton,
+.coverPhotoButton {
+  position: absolute;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 50px;
+  cursor: pointer;
+  display: none;
+}
+
+.profileImageContainer:hover .profilePictureButton,
+.coverPhotoContainer:hover .coverPhotoButton {
+  display: block;
+}
+
+.coverPhotoContainer {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.coverPhotoContainer img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.imagePreview,
+.coverPreview {
+  width: 100%;
+  display: block;
+  margin-top: 1rem;
+  max-width: 100%;
+}
+
+.pinnedPostContainer {
+  border-bottom: 10px solid rgb(230, 236, 240);
+}
+
+.searchBarContainer {
+  position: relative;
+  color: var(--greyText);
+  padding: 10px var(--spacing);
+}
+
+.searchBarContainer svg {
+  position: absolute;
+  top: 20px;
+  left: 28px;
+}
+
+.searchBarContainer input {
+  height: 36px;
+  width: 100%;
+  border-radius: 50px;
+  padding: 5px 15px 5px 40px;
+  background-color: var(--lightGrey);
+  border: none;
+  color: var(--greyText);
+}
+
+.chatPageContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  flex: 1;
+  flex-basis: 0;
+}
+
+.chatTitleBar {
+  border: 1px solid var(--lightGrey);
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  min-height: 60px;
+}
+
+.chatTitleBar label {
+  margin: 0 10px 0 0;
+}
+
+#userSearchTextbox {
+  flex: 1;
+  border: none;
+  font-weight: 200;
+  min-width: 350px;
+}
+
+.createChatButton {
+  border: none;
+  background-color: var(--blue);
+  color: white;
+  padding: 7px 20px;
+  display: inline-block;
+  border-radius: 40px;
+  margin: 10px auto;
+}
+
+.createChatButton:disabled {
+  background: var(--lightGrey);
+  color: var(--greyText);
+}
+
+.resultsContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.resultsContainer .user {
+  padding: var(--spacing);
+  display: flex;
+  cursor: pointer;
+  border-bottom: 1px solid var(--lightGrey);
+}
+
+.selectedUser {
+  font-weight: 300;
+  background-color: #cbe5fe;
+  color: #0084ff;
+  padding: 5px;
+  border-radius: 3px;
+  margin: 5px 5px 0 0;
+  display: inline-block;
+}
+
+.resultListItem {
+  padding: 7px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--lightGrey);
+}
+
+.resultListItem:hover {
+  background-color: #f2f2f2;
+}
+
+.resultsDetailsContainer {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.resultsDetailsContainer .heading {
+  font-weight: 500;
+}
+
+.resultsDetailsContainer .subtext {
+  font-size: 14px;
+  color: var(--greyText);
+}
+
+.resultListItem img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.resultImageContainer {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+}
+
+.groupChat img {
+  position: absolute;
+  width: 65%;
+  height: 65%;
+  bottom: 0;
+  margin: 0;
+  border: 2px solid #fff;
+}
+
+.groupChat img:first-of-type {
+  top: 0;
+  right: 0;
+}
+
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.chatTitleBarContainer {
+  border-bottom: 1px solid var(--lightGrey);
+  display: flex;
+  align-items: center;
+  padding: var(--spacing);
+}
+
+.chatName {
+  width: 100%;
+  border: 1px solid transparent;
+  padding: 0 5px;
+}
+
+.chatName:hover {
+  border: 1px solid var(--lightGrey);
+  cursor: text;
+}
+
+.chatContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  /* overflow-y: hidden; */
+  flex-basis: 0;
+}
+
+.chatContainer .chatFooter {
+  display: flex;
+  padding: var(--spacing);
+  flex-shrink: 0;
+}
+
+.chatContainer .chatFooter textarea {
+  resize: none;
+  flex: 1;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 18px;
+  border: none;
+  padding: 8px 12px;
+  height: 38px;
+  overflow-y: hidden;
+}
+
+.chatContainer .chatFooter button {
+  background: transparent;
+  color: var(--blue);
+  font-size: 24px;
+}
+
+.chatMessages {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing);
+  overflow-y: auto;
+}
+
+.mainContentContainer {
+  flex: 1;
+  display: flex;
+  overflow-y: hidden;
+}
+.chatImagesContainer {
+  display: flex;
+  flex-direction: row-reverse;
+  height: 100%;
+  margin-right: 10px;
+}
+
+.chatImagesContainer img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+
+.chatImagesContainer .userCount {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #f1f1f1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid white;
+  font-size: 16px;
+  font-weight: 500;
+}
+.chatImagesContainer img:not(:last-child),
+.chatImagesContainer .userCount {
+  margin-left: -10px;
+}
+
+.chatNameTextBox {
+  width: 100%;
+}
+
+.chatMessages .message {
+  padding-bottom: 2px;
+  list-style: none;
+  display: flex;
+  align-items: flex-end;
+}
+
+.chatMessages .message .messageBody {
+  background-color: #f1f0f0;
+  padding: 6px 12px;
+  border-radius: 18px;
+  font-size: 14px;
+  flex-shrink: 0;
+  -webkit-flex: 0;
+}
+
+.chatMessages .message .messageContainer {
+  display: flex;
+  flex-direction: column;
+  max-width: 55%;
+}
+
+.chatMessages .message.mine .messageContainer {
+  align-items: flex-end;
+}
+
+.chatMessages .message.mine {
+  flex-direction: row-reverse;
+}
+
+.chatMessages .message.mine .messageBody {
+  background-color: var(--blue);
+  color: #fff;
+}
+
+.chatMessages .imageContainer {
+  height: 24px;
+  width: 24px;
+  margin-right: 7px;
+}
+
+.chatMessages img {
+  height: 100%;
+  border-radius: 50%;
+  vertical-align: bottom;
+}
+
+.chatMessages .message.last {
+  margin-bottom: 7px;
+}
+
+.senderName {
+  color: rgba(0, 0, 0, 0.4);
+}
